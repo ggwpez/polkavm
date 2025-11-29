@@ -3,7 +3,7 @@
 #![allow(clippy::exit)]
 
 use clap::Parser;
-use polkavm_common::program::{Opcode, ProgramBlob, InstructionSetKind, ISA32_V1, ISA64_V1};
+use polkavm_common::program::{Opcode, ProgramBlob, ISA32_V1, ISA64_V1};
 #[cfg(feature = "disassembler")]
 use polkavm_disassembler::DisassemblyFormat;
 use std::collections::HashMap;
