@@ -637,15 +637,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "iced-x86"
-version = "1.20.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "cdd366a53278429c028367e0ba22a46cab6d565a57afb959f06e92c7a69e7828"
-dependencies = [
- "lazy_static",
-]
-
-[[package]]
 name = "image"
 version = "0.24.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -930,7 +921,6 @@ version = "0.29.0"
 dependencies = [
  "clap",
  "env_logger",
- "iced-x86",
  "polkavm",
  "polkavm-common",
  "polkavm-disassembler",
@@ -959,7 +949,6 @@ dependencies = [
 name = "polkavm-assembler"
 version = "0.29.0"
 dependencies = [
- "iced-x86",
  "log",
 ]
 
@@ -1004,7 +993,6 @@ name = "polkavm-disassembler"
 version = "0.29.0"
 dependencies = [
  "clap",
- "iced-x86",
  "polkavm",
  "polkavm-common",
  "polkavm-linker",

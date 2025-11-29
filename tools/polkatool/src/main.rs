@@ -3,7 +3,8 @@
 #![allow(clippy::exit)]
 
 use clap::Parser;
-use polkavm_common::program::{Opcode, ProgramBlob, ISA32_V1, ISA64_V1};
+use polkavm_common::program::{Opcode, ProgramBlob, InstructionSetKind, ISA32_V1, ISA64_V1};
+#[cfg(feature = "disassembler")]
 use polkavm_disassembler::DisassemblyFormat;
 use std::collections::HashMap;
 use std::path::{Path, PathBuf};
@@ -53,6 +54,7 @@ enum Args {
     },
 
     /// Disassembles a .polkavm blob into its human-readable assembly.
+    #[cfg(feature = "disassembler")]
     Disassemble {
         /// The output file.
         #[clap(short = 'o', long)]
@@ -131,6 +133,7 @@ fn main() {
             min_stack_size,
             dispatch_table,
         ),
+        #[cfg(feature = "disassembler")]
         Args::Disassemble {
             output,
             format,
@@ -272,6 +275,7 @@ fn main_stats(inputs: Vec<PathBuf>) -> Result<(), String> {
 }
 
 #[allow(clippy::fn_params_excessive_bools)]
+#[cfg(feature = "disassembler")]
 fn main_disassemble(
     input: PathBuf,
     format: DisassemblyFormat,
