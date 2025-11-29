@@ -11,9 +11,6 @@ description = "Runtime assembler for PolkaVM"
 [dependencies]
 log = { workspace = true }
 
-[dev-dependencies]
-iced-x86 = { workspace = true, features = ["code_asm"] }
-
 [features]
 default = []
 alloc = []
