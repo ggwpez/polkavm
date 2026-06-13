@@ -275,7 +275,7 @@ fn main_link(
         }
     };
 
-    let blob = match polkavm_linker::program_from_elf(config, TargetInstructionSet::Latest, &data) {
+    let blob = match polkavm_linker::program_from_elf(config, TargetInstructionSet::JamV1, &data) {
         Ok(blob) => blob,
         Err(error) => {
             bail!("failed to link {input:?}: {error}");
